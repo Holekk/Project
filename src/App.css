@@ -1,0 +1,266 @@
+.App {
+  width: 1920px;
+  height: 100vh;
+
+}
+
+body {
+  /*Margin oraz padding ustawiony na 0, ponieważ navbar musi być rozciągniety bez odstępów*/
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  /*Wyśrodkowanie elementów wzdłuż osi Y wszystkiech elmentów w zależności do pojemnika w którym się znajdują(W tym przypdaku Navbar -> leftSide, który jest ustawiony na szerokość 50%)*/
+
+}
+
+/*------------------------------------Navbar------------------------------------ */
+.Navbar {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  background-color: white;
+
+}
+
+/* display: flex. Dzięki temu dzieci, które się w nim znajdują mogą:
+
+    zostać ułożone w dowolnym kierunku: w lewo, prawo, w dół a nawet w górę,
+    zostać ustawione w dowolnej kolejności,
+    dopasować swoje rozmiary do rozmiaru rodzica, aby nie marnować przestrzeni,
+    wyrównywać się do siebie nawzajem,
+    mieć jednakową wysokość niezależnie od ilości treści, którą zawierają
+*/
+
+/* ------------------------------------Lewa storna navbaru/*------------------------------------*/
+.Navbar .leftSide {
+  /* flex: 50%;*/
+  /*50% wielkości*/
+  display: flex;
+  justify-content: center;
+  /*Wyśrodkowanie elementów wzdłuż osi Y wszystkiech elmentów w zależności do pojemnika w którym się znajdują(W tym przypdaku Navbar -> leftSide, który jest ustawiony na szerokość 50%)*/
+  align-items: center;
+  /*Wyśrodkowanie )elementów wzdłuż osi X) wszystkiech elmentów w zależności do pojemnika w którym się znajdują(W tym przypdaku Navbar, który jest ustawiony na wysokość 80px)*/
+  margin-left: 0px;
+
+}
+
+/*.Navbar .leftSide .subPages {
+  max-height: 80px;
+  Maksymalna wysokośś elementów
+}*/
+
+
+/* ------------------------------------Lewa strona navbaru -> elementy ,,a------------------------------------ */
+.Navbar .leftSide .subPages a {
+  color: #071e54;
+  font-size: 20px;
+  margin-left: 40px;
+  /*Odunięcie elementów ,,a" od siebie na 20px*/
+  text-decoration: none;
+}
+
+/* ------------------------------------ Lewa strona navbaru -> elementy ,,a -> odwiedzone ------------------------------------ */
+.Navbar .leftSide .subPages a:hover {
+  color: red;
+}
+
+/* ------------------------------------ Lewa strona navbaru -> element ,,Hello World" ------------------------------------*/
+#hello {
+  font-size: 35px;
+  font-weight: 600;
+  margin-left: 80px;
+}
+
+/* ------------------------------------ Prawa strona navbaru  ------------------------------------*/
+.Navbar .rightSide {
+  /*flex: 50%;*/
+  /*50% wielkości*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 840px;
+
+}
+
+/* ------------------------------------ Prawa strona navbaru -> element input(wprowadzanie tekstu)  ------------------------------------*/
+.rightSide input {
+  width: 200px;
+  height: 37px;
+  border: 1px solid lightgray;
+  /*Usunięcie domyślnego obramowania*/
+}
+
+/* ------------------------------------ Prawa strona navbaru -> element button(przycisk z lupką) ------------------------------------*/
+.rightSide button {
+  height: 40px;
+  /*Ustawienie  wysokości ( należy dopasować do siebie 2 elementy - w tym wypadku 2px wiecej wystarczą)*/
+  width: 40px;
+  border: none;
+  background-color: rgb(240, 47, 150);
+}
+
+
+/* ------------------------------------ Slider poniżej navbar ------------------------------------*/
+.Slider {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  background-color: rgb(234, 234, 245);
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------------------------ Teskt h1 w sliderze ------------------------------------*/
+.Slider h1 {
+  font-size: 60px;
+  color: #071e54;
+  flex: 100%;
+  margin-left: 80px;
+}
+
+/* ------------------------------------ Opakowanie produktów poniżej Slidera ------------------------------------*/
+
+
+/* ------------------------------------ Karta produktu ------------------------------------*/
+.ProductCart {
+  width: 25%;
+  height: 25%;
+  float: left;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px 0px 20px 0px;
+
+
+}
+
+.Cart {
+  width: 320px;
+  height: 320px;
+  /* flex-grow: 1;
+  flex-shrink: 1;*/
+  background-color: rgb(243, 243, 243);
+  position: relative;
+
+}
+
+/* ------------------------------------ Karta produktu po najechaniu ------------------------------------*/
+.Cart:hover {
+  background-color: rgb(229, 236, 229);
+}
+
+
+/* ------------------------------------ Zdjęcie w karcie produktu ------------------------------------*/
+.Cart .image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  /*line-height: 180px;
+*/
+}
+
+
+/* ------------------------------------ Karta produktu -> przycisk koszyka ------------------------------------*/
+.Cart button {
+  width: 50px;
+  height: 50px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 40px;
+  border: none;
+  color: darkblue;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* ------------------------------------ Karta produktu -> przycisk koszyka ->po kliknięciu   ------------------------------------*/
+.Cart button:active {
+  background-color: lightblue;
+
+}
+
+/* ------------------------------------ Informacje pod kartą produktu   ------------------------------------*/
+
+.info {
+  /*clear: both;*/
+  text-align: center;
+}
+
+/* ------------------------------------ Kwota końcowa  ------------------------------------*/
+
+.Total {
+  float: right;
+  font-size: 30px;
+  /*clear: both;*/
+}
+
+/* ------------------------------------ Produkt znajdujący się w koszyku   ------------------------------------*/
+
+.ProductInBasket {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  /*clear: both;*/
+  text-align: center;
+}
+/* ------------------------------------  Okienko do wyświetlania ilości w koszyku  ------------------------------------*/
+
+th {
+  display: inline-table;
+  margin: 5px;
+  border: solid 4px lightgray;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* ------------------------------------  Zdjęcie produktu w koszyku ------------------------------------*/
+.ProductInBasket .Photo { 
+  width: 150px;
+  height: 150px;
+  float: left;
+  margin: auto;
+}
+ /* ------------------------------------ Nazwa prouktu w koszyku  ------------------------------------*/
+.ProductInBasket .Name {
+
+  width: 20%;
+  color: #071e54;
+  font-size: 20px;
+  margin: auto;
+  float: left;
+}
+/* ------------------------------------ Przyciski w koszyku  ------------------------------------*/
+.ProductInBasket .Buttons {
+  width: 20%;
+  margin: auto;
+}
+
+/* ------------------------------------ Style jednego przycisku  ------------------------------------*/
+.ProductInBasket .Buttons button {
+  border: none;
+  background-color: white;
+  font-size: 40px;
+  color: silver;
+  cursor: pointer;
+}
+
+/* ------------------------------------ Kwota produktu w koszyku  ------------------------------------*/
+.ProductInBasket .Price {
+  width: 20%;
+  font-size: 25px;
+  margin: auto;
+  float: left;
+}
+
+.ProductInBasket .Delete {
+  margin: auto;
+}
+
